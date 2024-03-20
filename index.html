@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="index1.css">
+  <script src="index2.js"></script>
+  <link rel="profile_page" href="profile_page.html">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="Daniel.png" alt="Profile Photo" class="profile-photo">
+      <div>
+        <span class="greeting">Olá <span id="username">Daniel Morais</span></span><span class="wave">👋</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="profileBtn">Gerir Perfil</button>
+      <button id="logoutBtn">Terminar Sessão</button>
+    </div>
+    <div class="tasks-container">
+      <div class="tasks-header">
+        <div class="title">As Minhas Tarefas</div>
+        <div class="add-task-button-container">
+          <button id="newTaskBtn" class="add-task-button">+ Nova Tarefa</button>
+        </div>
+      </div>
+      <!-- Table for tasks -->
+      <table class="tasks-table">
+        <thead>
+          <tr>
+            <th>Tarefas</th>
+            <th>Data de Conclusão</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="task-row" data-id="lab1">
+            <td>Fazer o LAB1 de PW</td>
+            <td>13-03-2024</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr class="task-row" data-id="lab2">
+            <td>Fazer o LAB2 de PW</td>
+            <td>20-03-2024</td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>        
+      </table>
+    </div>    
+    <div id="newTaskPopup" class="popup">
+      <span class="close-btn" onclick="closePopup()">&times;</span> <!-- Close button (X) -->
+      <h2>Nova Tarefa</h2>
+      <div class="task-inputs">
+        <div class="task-input">
+          <label for="taskName">Descrição</label>
+          <input type="text" id="taskName" class="large-input">
+        </div>
+        <div class="task-input">
+          <label for="taskDate">Data</label>
+          <input type="date" id="taskDate">
+        </div>
+      </div>
+      <button id="saveTaskBtn">Gravar</button>
+    </div>
+
+    <div id="editTaskPopup" class="popup">
+      <span class="close-btn" onclick="closePopup()">&times;</span> <!-- Close button (X) -->
+      <h2>Editar Tarefa</h2>
+      <div class="task-inputs">
+        <div class="task-input">
+          <label for="editDescription">Descrição</label>
+          <textarea id="editDescription" rows="4"></textarea>
+        </div>
+        <div class="task-input">
+          <label for="editDate">Data</label>
+          <input type="date" id="editDate">
+        </div>
+      </div>
+      <button id="saveEditBtn">Gravar</button>
+      <button id="deleteTaskBtn">Apagar</button>
+    </div>
+  </div>
+
+  <div id="profilePopup" class="popup">
+    <iframe id="profileFrame" src="profile_page.html" frameborder="0"></iframe>
+  </div>
+
+  <div id="userEmail"></div>
+</body>
+</html>
